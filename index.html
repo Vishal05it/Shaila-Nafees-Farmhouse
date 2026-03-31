@@ -520,7 +520,157 @@
         </div>
       </div>
     </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-[#f4eee1] overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8"
+        >
+          <div class="max-w-2xl">
+            <span
+              class="text-amber-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
+              >Visual Journal</span
+            >
+            <h2
+              class="text-5xl md:text-6xl font-serif italic text-[#3d2b1f] mb-6"
+            >
+              Captured Moments
+            </h2>
+            <p class="text-gray-600 leading-relaxed font-light text-lg">
+              A glimpse into the quiet mornings, golden afternoons, and starlit
+              evenings at the farmstead. Every corner tells a story of heritage
+              and peace.
+            </p>
+          </div>
+          <!-- Category Filters -->
+          <div
+            class="flex flex-wrap gap-4 text-[10px] uppercase tracking-widest font-bold"
+          >
+            <button
+              class="px-6 py-2 bg-[#4A6741] text-white rounded shadow-md border border-[#4A6741]"
+            >
+              All
+            </button>
+            <button
+              class="px-6 py-2 bg-white text-gray-500 rounded border border-gray-200 hover:border-[#4A6741] hover:text-[#4A6741] transition-all"
+            >
+              Interiors
+            </button>
+            <button
+              class="px-6 py-2 bg-white text-gray-500 rounded border border-gray-200 hover:border-[#4A6741] hover:text-[#4A6741] transition-all"
+            >
+              Nature
+            </button>
+            <button
+              class="px-6 py-2 bg-white text-gray-500 rounded border border-gray-200 hover:border-[#4A6741] hover:text-[#4A6741] transition-all"
+            >
+              Livestock
+            </button>
+          </div>
+        </div>
 
+        <!-- Masonry-style Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Row 1 -->
+          <div class="space-y-8">
+            <div class="polaroid group cursor-pointer">
+              <div class="overflow-hidden bg-gray-100 h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=600"
+                  alt="Morning Dew"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                Golden Hour in the Meadow
+              </p>
+            </div>
+            <div class="polaroid group cursor-pointer !rotate-1">
+              <div class="overflow-hidden bg-gray-100 h-96">
+                <img
+                  src="https://images.unsplash.com/photo-1594489428504-5c0c480a15fd?auto=format&fit=crop&q=80&w=600"
+                  alt="Rustic Interior"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                The Living Hearth
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="space-y-8 lg:mt-12">
+            <div class="polaroid group cursor-pointer !rotate-[-1deg]">
+              <div class="overflow-hidden bg-gray-100 h-[30rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?auto=format&fit=crop&q=80&w=600"
+                  alt="Farm Barn"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                The Historic North Barn
+              </p>
+            </div>
+            <div class="polaroid group cursor-pointer !rotate-2">
+              <div class="overflow-hidden bg-gray-100 h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?auto=format&fit=crop&q=80&w=600"
+                  alt="Farm Friends"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                Morning Greetings
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="space-y-8">
+            <div class="polaroid group cursor-pointer !rotate-3">
+              <div class="overflow-hidden bg-gray-100 h-80">
+                <img
+                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600"
+                  alt="Orchard"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                Apple Blossom Season
+              </p>
+            </div>
+            <div class="polaroid group cursor-pointer !rotate-[-2deg]">
+              <div class="overflow-hidden bg-gray-100 h-[26rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600"
+                  alt="Dining Room"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <p class="mt-4 text-center script-font text-xl text-[#4a6741]">
+                The Harvest Table
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- View More CTA -->
+        <div class="mt-20 text-center">
+          <a
+            href="#"
+            class="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.3em] text-[#4A6741] hover:text-amber-600 transition-colors group"
+          >
+            Discover the full story
+            <span class="group-hover:translate-x-2 transition-transform"
+              >→</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
     <!-- Wood Texture Footer Section -->
     <footer class="wood-bg text-white pt-24 relative overflow-hidden">
       <div class="tartan-divider absolute top-0 left-0"></div>
