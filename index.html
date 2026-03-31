@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaila Nafees Farmhouse - Authentic Countryside Escape</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-green: #4a6741;
+        --deep-brown: #3d2b1f;
+        --paper-cream: #f4eee1;
+        --accent-gold: #d4af37;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: var(--paper-cream);
+        color: var(--deep-brown);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
+
+      .script-font {
+        font-family: "Dancing Script", cursive;
+      }
+
+      /* Custom Tartan Border */
+      .tartan-divider {
+        height: 12px;
+        background: repeating-linear-gradient(
+          90deg,
+          #4a6741 0,
+          #4a6741 40px,
+          #8b4513 40px,
+          #8b4513 45px,
+          #d4af37 45px,
+          #d4af37 46px
+        );
+        width: 100%;
+      }
+
+      /* Wood Texture Background */
+      .wood-bg {
+        background-image:
+          url("https://www.transparenttextures.com/patterns/wood-pattern.png"),
+          linear-gradient(rgba(61, 43, 31, 0.95), rgba(61, 43, 31, 0.95));
+        background-color: #3d2b1f;
+      }
+
+      /* Floating Label Logic */
+      .floating-group {
+        position: relative;
+      }
+      .floating-input {
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        width: 100%;
+        padding: 1.25rem 0.75rem 0.25rem 0.75rem;
+        outline: none;
+        background: white;
+        transition: all 0.2s ease;
+      }
+      .floating-label {
+        position: absolute;
+        left: 0.75rem;
+        top: 0.85rem;
+        color: #9ca3af;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+      }
+      .floating-input:focus ~ .floating-label,
+      .floating-input:not(:placeholder-shown) ~ .floating-label {
+        top: 0.25rem;
+        font-size: 0.7rem;
+        color: var(--primary-green);
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Polaroid Effect */
+      .polaroid {
+        background: white;
+        padding: 12px 12px 35px 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid #e5e7eb;
+      }
+      .polaroid:hover {
+        transform: rotate(0deg) scale(1.05);
+        z-index: 20;
+      }
+
+      .amenity-card {
+        transition: all 0.3s ease;
+      }
+      .amenity-card:hover {
+        transform: translateY(-10px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#2d1e14]/95 backdrop-blur-sm text-white transition-all duration-300"
+      id="main-nav"
+    >
+      <div class="tartan-divider"></div>
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex flex-col">
+          <span class="text-2xl font-serif italic tracking-wider leading-none"
+            >Shaila Nafees Farmhouse</span
+          >
+          <span
+            class="text-[9px] uppercase tracking-[0.3em] text-amber-400 font-bold mt-1"
+            >Est. 1892</span
+          >
+        </div>
+        <div
+          class="hidden md:flex space-x-8 items-center text-xs uppercase tracking-widest font-bold"
+        >
+          <a href="#about" class="hover:text-amber-200 transition">About</a>
+          <a href="#why-us" class="hover:text-amber-200 transition">Heritage</a>
+          <a href="#amenities" class="hover:text-amber-200 transition"
+            >Amenities</a
+          >
+          <a
+            href="#contact"
+            class="bg-[#4A6741] px-6 py-2.5 rounded shadow-lg hover:bg-green-700 transition"
+            >Book Stay</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen pt-20 flex items-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&q=80&w=2000"
+          alt="Farmhouse Porch"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-20"
+      >
+        <!-- Hero Text -->
+        <div class="text-white">
+          <h1 class="text-6xl md:text-8xl font-bold mb-4 leading-tight">
+            Shaila Nafees <br /><span class="text-amber-400">Farmhouse</span>
+          </h1>
+          <p
+            class="text-2xl md:text-4xl italic script-font mb-6 text-amber-100"
+          >
+            Authentic Countryside Escape
+          </p>
+          <div class="h-1.5 w-24 bg-amber-400 mb-8 rounded-full"></div>
+          <p
+            class="text-lg max-w-lg opacity-95 leading-relaxed font-light mb-10"
+          >
+            Reconnect with the earth in our 19th-century homestead. Experience
+            the perfect blend of rustic tradition and artisanal comfort.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#about"
+              class="border-2 border-white/30 hover:border-white px-8 py-3 rounded uppercase text-xs tracking-widest font-bold transition"
+              >Discover More</a
+            >
+          </div>
+        </div>
+
+        <!-- Enquiry Form -->
+        <div
+          id="contact"
+          class="bg-white/95 p-8 rounded-lg shadow-2xl backdrop-blur max-w-md ml-auto w-full border-t-8 border-[#4A6741]"
+        >
+          <div class="text-center mb-8">
+            <h3 class="text-3xl font-serif text-[#3d2b1f]">Plan Your Visit</h3>
+            <p
+              class="text-[10px] text-gray-400 uppercase tracking-widest mt-2 font-bold"
+            >
+              Tailored Countryside Experiences
+            </p>
+          </div>
+
+          <form class="space-y-4">
+            <div class="floating-group">
+              <input
+                type="text"
+                class="floating-input"
+                placeholder=" "
+                id="name"
+                required
+              />
+              <label class="floating-label">Full Name</label>
+            </div>
+            <div class="floating-group">
+              <input
+                type="email"
+                class="floating-input"
+                placeholder=" "
+                id="email"
+                required
+              />
+              <label class="floating-label">Email Address</label>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="floating-group">
+                <input
+                  type="date"
+                  class="floating-input"
+                  placeholder=" "
+                  id="checkin"
+                  required
+                />
+                <label class="floating-label">Check-in</label>
+              </div>
+              <div class="floating-group">
+                <select class="floating-input" id="guests">
+                  <option value="" disabled selected hidden></option>
+                  <option>1-2 Guests</option>
+                  <option>3-5 Guests</option>
+                  <option>Large Group (6+)</option>
+                </select>
+                <label class="floating-label">Guests</label>
+              </div>
+            </div>
+            <div class="floating-group">
+              <textarea
+                class="floating-input h-24 pt-5 resize-none"
+                placeholder=" "
+                id="message"
+              ></textarea>
+              <label class="floating-label"
+                >Tell us about your retreat...</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#4A6741] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#3d5535] transition-all shadow-xl rounded flex items-center justify-center gap-2"
+            >
+              Request Availability
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="tartan-divider"></div>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div class="order-2 md:order-1">
+          <span
+            class="text-amber-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
+            >Our Story</span
+          >
+          <h2 class="text-5xl font-bold mb-8 script-font text-[#4A6741]">
+            A Century of Hearth & Harvest
+          </h2>
+          <div
+            class="space-y-6 text-gray-700 leading-relaxed text-lg font-light"
+          >
+            <p>
+              Shaila Nafees Farmhouse isn't just a destination; it's a living
+              history. Founded by the Miller family in 1892, these 150 acres
+              have witnessed generations of dawn harvests and twilight
+              celebrations.
+            </p>
+            <p>
+              We’ve meticulously restored the original stonework and timber
+              beams of the manor, ensuring that while you enjoy modern plush
+              bedding and high-speed connectivity, you never lose that
+              soul-stirring connection to the past.
+            </p>
+            <p class="font-bold text-[#3d2b1f] italic">
+              "Here, time doesn't fly. It wanders through the meadows and rests
+              by the fire."
+            </p>
+          </div>
+          <div class="mt-12 grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <span class="block text-3xl font-serif font-bold text-[#4A6741]"
+                >150</span
+              >
+              <span class="text-[10px] uppercase font-bold text-gray-400"
+                >Acres</span
+              >
+            </div>
+            <div class="text-center border-x border-gray-200">
+              <span class="block text-3xl font-serif font-bold text-[#4A6741]"
+                >12</span
+              >
+              <span class="text-[10px] uppercase font-bold text-gray-400"
+                >Guest Rooms</span
+              >
+            </div>
+            <div class="text-center">
+              <span class="block text-3xl font-serif font-bold text-[#4A6741]"
+                >0%</span
+              >
+              <span class="text-[10px] uppercase font-bold text-gray-400"
+                >City Noise</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 grid grid-cols-2 gap-6 relative">
+          <div class="polaroid transform -rotate-3 mt-10">
+            <img
+              src="https://images.unsplash.com/photo-1544474673-dbad9024fad2?auto=format&fit=crop&q=80&w=400"
+              alt="Legacy"
+              class="w-full h-56 object-cover"
+            />
+            <p class="text-center mt-3 script-font text-base text-gray-600">
+              The Original Barn, 1910
+            </p>
+          </div>
+          <div class="polaroid transform rotate-6">
+            <img
+              src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?auto=format&fit=crop&q=80&w=400"
+              alt="Livestock"
+              class="w-full h-56 object-cover"
+            />
+            <p class="text-center mt-3 script-font text-base text-gray-600">
+              Morning Grazing
+            </p>
+          </div>
+          <div
+            class="absolute -bottom-10 right-10 w-24 h-24 bg-amber-400/20 rounded-full blur-3xl z-0"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section
+      id="why-us"
+      class="py-32 px-6 bg-[#eee8d5] relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-serif mb-4">Why Shaila Nafees Farmhouse?</h2>
+          <p class="script-font text-2xl text-[#4A6741]">
+            Simplicity, reimagined.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <div
+            class="bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition-all group"
+          >
+            <div
+              class="text-4xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🧶
+            </div>
+            <h4 class="text-xl font-bold mb-4">Slow Living</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              No rush, no alarms. We follow the rhythm of the sun and the
+              seasons.
+            </p>
+          </div>
+          <div
+            class="bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition-all group"
+          >
+            <div
+              class="text-4xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🍳
+            </div>
+            <h4 class="text-xl font-bold mb-4">Artisan Food</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Breakfast from the coop. Honey from our hives. Bread from the
+              stone oven.
+            </p>
+          </div>
+          <div
+            class="bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition-all group"
+          >
+            <div
+              class="text-4xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🏔️
+            </div>
+            <h4 class="text-xl font-bold mb-4">Total Seclusion</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Hidden behind a private forest belt, absolute privacy is
+              guaranteed.
+            </p>
+          </div>
+          <div
+            class="bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition-all group"
+          >
+            <div
+              class="text-4xl mb-6 group-hover:scale-110 transition-transform"
+            >
+              🐕
+            </div>
+            <h4 class="text-xl font-bold mb-4">Pet Friendly</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Your four-legged friends are part of the family at Shaila Nafees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Sections -->
+    <section id="amenities" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-24">
+        <h2 class="text-6xl font-serif mb-6">World-Class Country Amenities</h2>
+        <div class="w-40 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Amenity 1: The Spring Pool -->
+      <div class="grid md:grid-cols-2 gap-16 items-center mb-40 amenity-card">
+        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video">
+          <img
+            src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800"
+            alt="Swimming Pool"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <span
+            class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 block"
+            >Water & Wellness</span
+          >
+          <h3 class="text-4xl font-bold mb-6">Natural Spring-Fed Pool</h3>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">
+            Our infinity-edge pool is filtered by natural limestone and heated
+            by geothermal energy. Swim under the clear country sky with
+            panoramic views of the valley below.
+          </p>
+          <ul class="space-y-4 font-bold text-sm text-[#4A6741]">
+            <li>✓ Chemical-free natural filtration</li>
+            <li>✓ Geothermal temperature control</li>
+            <li>✓ Sunset viewing deck</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Amenity 2: The Greenhouse -->
+      <div class="grid md:grid-cols-2 gap-16 items-center mb-40 amenity-card">
+        <div
+          class="md:order-2 rounded-3xl overflow-hidden shadow-2xl aspect-video"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800"
+            alt="Greenhouse"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="md:order-1">
+          <span
+            class="text-emerald-700 font-bold text-xs tracking-widest uppercase mb-4 block"
+            >Farm-to-Table</span
+          >
+          <h3 class="text-4xl font-bold mb-6">The Victorian Greenhouse</h3>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">
+            Step inside our botanical sanctuary. Guests are welcome to harvest
+            their own herbs for dinner or join our master gardener for morning
+            pruning sessions.
+          </p>
+          <ul class="space-y-4 font-bold text-sm text-[#4A6741]">
+            <li>✓ Organic Heirloom Vegetables</li>
+            <li>✓ Tropical Orchid Collection</li>
+            <li>✓ Afternoon Tea Service</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Amenity 3: The Starlight Firepit -->
+      <div class="grid md:grid-cols-2 gap-16 items-center amenity-card">
+        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video">
+          <img
+            src="https://i.natgeofe.com/n/bf89a1aa-d64e-4470-a05d-cb35a25b5c22/leadstargazing1.png"
+            alt="Firepit"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <span
+            class="text-orange-600 font-bold text-xs tracking-widest uppercase mb-4 block"
+            >Gatherings</span
+          >
+          <h3 class="text-4xl font-bold mb-6">The Starlight Firepit</h3>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">
+            As evening falls, the central stone firepit becomes the heart of
+            Shaila Nafees. We provide artisanal s'mores kits, local ciders, and
+            a front-row seat to the Milky Way.
+          </p>
+          <ul class="space-y-4 font-bold text-sm text-[#4A6741]">
+            <li>✓ Hand-cut cedar firewood</li>
+            <li>✓ Plush outdoor blankets</li>
+            <li>✓ Acoustic guitar & storytelling sessions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wood Texture Footer Section -->
+    <footer class="wood-bg text-white pt-32 relative">
+      <div class="tartan-divider absolute top-0 left-0"></div>
+
+      <div class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="grid lg:grid-cols-12 gap-16 items-start">
+          <div class="lg:col-span-5">
+            <div class="text-5xl font-serif italic mb-8">
+              Shaila Nafees Farmhouse
+            </div>
+            <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
+              Escape the digital noise and rediscover the tactile beauty of
+              rural life. Your sanctuary is waiting.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-brown-900 transition-all border border-white/10"
+                >FB</a
+              >
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-brown-900 transition-all border border-white/10"
+                >IG</a
+              >
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-brown-900 transition-all border border-white/10"
+                >YT</a
+              >
+            </div>
+          </div>
+
+          <div class="lg:col-span-3">
+            <h5
+              class="text-amber-400 font-bold uppercase tracking-widest text-xs mb-8"
+            >
+              Navigation
+            </h5>
+            <ul class="space-y-4 font-light text-gray-300">
+              <li>
+                <a href="#about" class="hover:text-white transition"
+                  >The Heritage</a
+                >
+              </li>
+              <li>
+                <a href="#amenities" class="hover:text-white transition"
+                  >Explore Amenities</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Guest Journal</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Sustainability Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-4">
+            <h5
+              class="text-amber-400 font-bold uppercase tracking-widest text-xs mb-8"
+            >
+              Stay in Touch
+            </h5>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <span class="text-xl">📍</span>
+                <p class="text-gray-300">
+                  123 Rural Lane, Green Valley<br />Heritage County, VT 05401
+                </p>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-xl">📞</span>
+                <p class="text-gray-300">+1 (555) RUSTIC-LIFE</p>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-xl">✉️</span>
+                <p class="text-gray-300">stay@havenfarmstead.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 mt-24 pt-12 flex flex-col md:row justify-between items-center text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold"
+        >
+          <p>© 2026 Shaila Nafees Farmhouse. All rights reserved.</p>
+          <div class="flex space-x-10 mt-8 md:mt-0">
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a href="#" class="hover:text-white transition">Terms</a>
+            <a href="#" class="hover:text-white transition">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll adjustment for fixed header
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Sticky header styling on scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("main-nav");
+        if (window.scrollY > 100) {
+          nav.classList.add("shadow-2xl", "bg-[#2d1e14]");
+          nav.classList.remove("bg-[#2d1e14]/95");
+        } else {
+          nav.classList.remove("shadow-2xl");
+          nav.classList.add("bg-[#2d1e14]/95");
+        }
+      });
+
+      // Form placeholder logic helper
+      const formInputs = document.querySelectorAll(".floating-input");
+      formInputs.forEach((input) => {
+        input.addEventListener("blur", () => {
+          if (input.value.trim() !== "") {
+            input.setAttribute("data-has-value", "true");
+          } else {
+            input.removeAttribute("data-has-value");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
