@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shaila Nafees Farmhouse - Authentic Countryside Escape</title>
+    <title>
+      Shahla Nafees Farmhouse - Premium Private Farmhouse Experience
+    </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap"
@@ -109,6 +111,81 @@
         transform: translateY(-10px);
       }
     </style>
+    <style>
+      /* Floating Label Logic */
+      .floating-group {
+        position: relative;
+      }
+      .floating-input {
+        width: 100%;
+        padding: 1rem 0.75rem 0.25rem 0.75rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background: white;
+        outline: none;
+        transition: all 0.2s;
+      }
+      .floating-label {
+        position: absolute;
+        left: 0.75rem;
+        top: 0.75rem;
+        pointer-events: none;
+        transition: all 0.2s;
+      }
+      .floating-input:focus ~ .floating-label,
+      .floating-input:not(:placeholder-shown) ~ .floating-label {
+        top: 0.25rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #4a6741;
+      }
+      .floating-input:focus {
+        border-color: #4a6741;
+        ring: 2px #4a6741;
+      }
+    </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+      #lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+    </style>
+
+    <style>
+      .slide {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        animation: kenburns 12s ease-in-out infinite;
+      }
+      @keyframes kenburns {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.15);
+        }
+      }
+      .hero-slider img {
+        transition: opacity 1s ease;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -121,8 +198,12 @@
         class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
       >
         <div class="flex flex-col">
-          <span class="text-2xl font-serif italic tracking-wider leading-none"
-            >Shaila Nafees Farmhouse</span
+          <a href="#home">
+            <span
+              id="home"
+              class="text-2xl font-serif italic tracking-wider leading-none"
+              >Shahla Nafees Farmhouse</span
+            ></a
           >
           <span
             class="text-[9px] uppercase tracking-[0.3em] text-amber-400 font-bold mt-1"
@@ -133,7 +214,7 @@
           class="hidden md:flex space-x-8 items-center text-xs uppercase tracking-widest font-bold"
         >
           <a href="#about" class="hover:text-amber-200 transition">About</a>
-          <a href="#why-us" class="hover:text-amber-200 transition">Heritage</a>
+          <a href="#why-us" class="hover:text-amber-200 transition">Why Us</a>
           <a href="#amenities" class="hover:text-amber-200 transition"
             >Amenities</a
           >
@@ -151,11 +232,20 @@
       class="relative min-h-screen pt-20 flex items-center overflow-hidden"
     >
       <div class="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&q=80&w=2000"
-          alt="Farmhouse Porch"
-          class="w-full h-full object-cover"
-        />
+        <div class="hero-slider absolute inset-0">
+          <img
+            class="slide w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&q=80&w=2000"
+          />
+          <img
+            class="slide w-full h-full object-cover hidden"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
+          />
+          <img
+            class="slide w-full h-full object-cover hidden"
+            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=2000"
+          />
+        </div>
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -165,12 +255,12 @@
         <!-- Hero Text -->
         <div class="text-white">
           <h1 class="text-6xl md:text-8xl font-bold mb-4 leading-tight">
-            Shaila Nafees <br /><span class="text-amber-400">Farmhouse</span>
+            Shahla Nafees <br /><span class="text-amber-400">Farmhouse</span>
           </h1>
           <p
             class="text-2xl md:text-4xl italic script-font mb-6 text-amber-100"
           >
-            Authentic Countryside Escape
+            Premium Private Farmhouse Experience
           </p>
           <div class="h-1.5 w-24 bg-amber-400 mb-8 rounded-full"></div>
           <p
@@ -185,6 +275,181 @@
               class="border-2 border-white/30 hover:border-white px-8 py-3 rounded uppercase text-xs tracking-widest font-bold transition"
               >Discover More</a
             >
+          </div>
+        </div>
+        <!-- Enquiry Modal Overlay -->
+        <div
+          id="enquiryModal"
+          class="fixed inset-0 z-[400] hidden items-center justify-center p-4"
+        >
+          <!-- Backdrop with blur -->
+          <div
+            class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity"
+            onclick="closeModal()"
+          ></div>
+
+          <!-- Modal Content -->
+          <div
+            class="relative bg-[#fbfaf7] w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-95 opacity-0 duration-300"
+            id="modalContainer"
+          >
+            <!-- Left Side: Visual/Branding (Hidden on mobile) -->
+            <div class="flex flex-col md:flex-row">
+              <div
+                class="hidden md:block w-1/3 bg-[#4A6741] p-8 text-white relative"
+              >
+                <div
+                  class="tartan-divider absolute top-0 left-0 opacity-20"
+                ></div>
+                <h3 class="font-serif text-3xl italic mt-12 mb-6">
+                  Plan Your Visit
+                </h3>
+                <p class="text-stone-200 text-sm leading-relaxed mb-8">
+                  Leave your details and our farm concierge will reach out to
+                  curate your perfect stay.
+                </p>
+                <div
+                  class="space-y-4 text-xs uppercase tracking-widest font-bold text-amber-400"
+                >
+                  <p>📍 Green Valley, VT</p>
+                  <p>📞 555-RUSTIC</p>
+                </div>
+              </div>
+
+              <!-- Right Side: Form -->
+              <div class="flex-1 p-8 md:p-12 relative">
+                <!-- Close Button -->
+                <button
+                  onclick="closeModal()"
+                  class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+
+                <h2 class="text-3xl font-serif text-[#3d2b1f] mb-2">
+                  Inquiry Form
+                </h2>
+                <p
+                  class="text-stone-500 text-sm mb-8 uppercase tracking-widest"
+                >
+                  Shahla Nafees Farmhouse
+                </p>
+
+                <form id="popupEnquiryForm" class="space-y-5">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="floating-group">
+                      <input
+                        type="text"
+                        name="name"
+                        class="floating-input border-stone-200"
+                        placeholder=" "
+                        required
+                      />
+                      <label class="floating-label text-stone-400"
+                        >Full Name</label
+                      >
+                    </div>
+                    <div class="floating-group">
+                      <input
+                        type="email"
+                        name="email"
+                        class="floating-input border-stone-200"
+                        placeholder=" "
+                        required
+                      />
+                      <label class="floating-label text-stone-400"
+                        >Email Address</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="floating-group">
+                    <select
+                      name="interest"
+                      class="floating-input border-stone-200 appearance-none bg-transparent pt-4"
+                      required
+                    >
+                      <option value="" disabled selected></option>
+                      <option value="stay">Weekend Stay</option>
+                      <option value="event">Private Event</option>
+                      <option value="tour">Farm Tour</option>
+                    </select>
+                    <label class="floating-label text-stone-400"
+                      >Reason for Inquiry</label
+                    >
+                  </div>
+
+                  <div class="floating-group">
+                    <textarea
+                      name="message"
+                      class="floating-input border-stone-200 h-24 pt-5 resize-none"
+                      placeholder=" "
+                      required
+                    ></textarea>
+                    <label class="floating-label text-stone-400"
+                      >How can we help you?</label
+                    >
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="w-full bg-[#4A6741] hover:bg-[#3d5435] text-white font-bold py-4 rounded-lg uppercase tracking-[0.2em] text-xs transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
+                  >
+                    Send Message
+                  </button>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div
+                  id="successMessage"
+                  class="hidden absolute inset-0 bg-[#fbfaf7] flex flex-col items-center justify-center text-center p-8 z-10"
+                >
+                  <div
+                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-6"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-serif text-[#3d2b1f] mb-2">
+                    Message Sent
+                  </h3>
+                  <p class="text-stone-500 text-sm mb-6">
+                    We'll get back to you within 24 hours.
+                  </p>
+                  <button
+                    onclick="closeModal()"
+                    class="text-[#4A6741] font-bold uppercase tracking-widest text-xs border-b border-[#4A6741] pb-1"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -269,7 +534,7 @@
     <div class="tartan-divider"></div>
 
     <!-- About Us Section -->
-    <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
+    <section id="about" data-aos="fade-up" class="py-32 px-6 max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-20 items-center">
         <div class="order-2 md:order-1">
           <span
@@ -277,13 +542,13 @@
             >Our Story</span
           >
           <h2 class="text-5xl font-bold mb-8 script-font text-[#4A6741]">
-            A Century of Hearth & Harvest
+            Welcome to Shahla Nafees Farm & Resort
           </h2>
           <div
             class="space-y-6 text-gray-700 leading-relaxed text-lg font-light"
           >
             <p>
-              Shaila Nafees Farmhouse isn't just a destination; it's a living
+              Shahla Nafees Farmhouse isn't just a destination; it's a living
               history. Founded by the Miller family in 1892, these 150 acres
               have witnessed generations of dawn harvests and twilight
               celebrations.
@@ -329,7 +594,7 @@
         <div class="order-1 md:order-2 grid grid-cols-2 gap-6 relative">
           <div class="polaroid transform -rotate-3 mt-10">
             <img
-              src="https://images.unsplash.com/photo-1544474673-dbad9024fad2?auto=format&fit=crop&q=80&w=400"
+              src="https://www.investopedia.com/thmb/Oho6_8jz4_uWxH1zcaHb4sWBzuk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pool-1bedab11579c4e9aae6c126843003a27.jpg"
               alt="Legacy"
               class="w-full h-56 object-cover"
             />
@@ -357,11 +622,12 @@
     <!-- Why Us Section -->
     <section
       id="why-us"
+      data-aos="fade-up"
       class="py-32 px-6 bg-[#eee8d5] relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto relative z-10">
+      <div class="max-w-7xl mx-auto relative z-1">
         <div class="text-center mb-20">
-          <h2 class="text-5xl font-serif mb-4">Why Shaila Nafees Farmhouse?</h2>
+          <h2 class="text-5xl font-serif mb-4">Why Shahla Nafees Farmhouse?</h2>
           <p class="script-font text-2xl text-[#4A6741]">
             Simplicity, reimagined.
           </p>
@@ -376,7 +642,7 @@
             >
               🧶
             </div>
-            <h4 class="text-xl font-bold mb-4">Slow Living</h4>
+            <h4 class="text-xl font-bold mb-4">Private Farmhouse Experience</h4>
             <p class="text-gray-600 text-sm leading-relaxed">
               No rush, no alarms. We follow the rhythm of the sun and the
               seasons.
@@ -390,7 +656,7 @@
             >
               🍳
             </div>
-            <h4 class="text-xl font-bold mb-4">Artisan Food</h4>
+            <h4 class="text-xl font-bold mb-4">Swimming Pool Facility</h4>
             <p class="text-gray-600 text-sm leading-relaxed">
               Breakfast from the coop. Honey from our hives. Bread from the
               stone oven.
@@ -404,7 +670,7 @@
             >
               🏔️
             </div>
-            <h4 class="text-xl font-bold mb-4">Total Seclusion</h4>
+            <h4 class="text-xl font-bold mb-4">Safe & Well‑Managed Property</h4>
             <p class="text-gray-600 text-sm leading-relaxed">
               Hidden behind a private forest belt, absolute privacy is
               guaranteed.
@@ -418,9 +684,10 @@
             >
               🐕
             </div>
-            <h4 class="text-xl font-bold mb-4">Pet Friendly</h4>
+            <h4 class="text-xl font-bold mb-4">Perfect for Gatherings</h4>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Your four-legged friends are part of the family at Shaila Nafees.
+              Ideal for family outings, birthday celebrations, and small private
+              events with friends and loved ones.
             </p>
           </div>
         </div>
@@ -428,7 +695,11 @@
     </section>
 
     <!-- Amenities Sections -->
-    <section id="amenities" class="py-32 px-6 max-w-7xl mx-auto">
+    <section
+      id="amenities"
+      data-aos="fade-up"
+      class="py-32 px-6 max-w-7xl mx-auto"
+    >
       <div class="text-center mb-24">
         <h2 class="text-6xl font-serif mb-6">World-Class Country Amenities</h2>
         <div class="w-40 h-1 bg-amber-500 mx-auto rounded-full"></div>
@@ -448,7 +719,7 @@
             class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 block"
             >Water & Wellness</span
           >
-          <h3 class="text-4xl font-bold mb-6">Natural Spring-Fed Pool</h3>
+          <h3 class="text-4xl font-bold mb-6">Private Swimming Pool</h3>
           <p class="text-gray-600 text-lg leading-relaxed mb-8">
             Our infinity-edge pool is filtered by natural limestone and heated
             by geothermal energy. Swim under the clear country sky with
@@ -478,7 +749,7 @@
             class="text-emerald-700 font-bold text-xs tracking-widest uppercase mb-4 block"
             >Farm-to-Table</span
           >
-          <h3 class="text-4xl font-bold mb-6">The Victorian Greenhouse</h3>
+          <h3 class="text-4xl font-bold mb-6">Spacious Outdoor Area</h3>
           <p class="text-gray-600 text-lg leading-relaxed mb-8">
             Step inside our botanical sanctuary. Guests are welcome to harvest
             their own herbs for dinner or join our master gardener for morning
@@ -492,7 +763,7 @@
         </div>
       </div>
 
-      <!-- Amenity 3: The Starlight Firepit -->
+      <!-- Amenity 3: Private & Secure Property -->
       <div class="grid md:grid-cols-2 gap-16 items-center amenity-card">
         <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video">
           <img
@@ -506,10 +777,10 @@
             class="text-orange-600 font-bold text-xs tracking-widest uppercase mb-4 block"
             >Gatherings</span
           >
-          <h3 class="text-4xl font-bold mb-6">The Starlight Firepit</h3>
+          <h3 class="text-4xl font-bold mb-6">Private & Secure Property</h3>
           <p class="text-gray-600 text-lg leading-relaxed mb-8">
             As evening falls, the central stone firepit becomes the heart of
-            Shaila Nafees. We provide artisanal s'mores kits, local ciders, and
+            Shahla Nafees. We provide artisanal s'mores kits, local ciders, and
             a front-row seat to the Milky Way.
           </p>
           <ul class="space-y-4 font-bold text-sm text-[#4A6741]">
@@ -520,8 +791,148 @@
         </div>
       </div>
     </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" data-aos="fade-up" class="py-32 px-6 bg-[#eee8d5]">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-5xl font-serif mb-6">Farmhouse Pricing</h2>
+        <p class="text-gray-600 mb-16">
+          Simple and transparent booking for day outings and gatherings.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-10 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Day Booking</h3>
+            <p class="text-4xl font-bold text-[#4A6741] mb-6">₹XXXX</p>
+            <ul class="text-gray-600 space-y-2">
+              <li>✓ 11:00 AM – 7:00 PM access</li>
+              <li>✓ Swimming Pool Access</li>
+              <li>✓ Private Farmhouse Area</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-2xl shadow-lg border-4 border-[#4A6741]"
+          >
+            <h3 class="text-2xl font-bold mb-4">Group Booking</h3>
+            <p class="text-4xl font-bold text-[#4A6741] mb-6">₹XXXX</p>
+            <ul class="text-gray-600 space-y-2">
+              <li>✓ Ideal for parties & gatherings</li>
+              <li>✓ Full farmhouse access</li>
+              <li>✓ Pool + outdoor space</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-10 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Extra Hours</h3>
+            <p class="text-4xl font-bold text-[#4A6741] mb-6">₹1000/hr</p>
+            <ul class="text-gray-600 space-y-2">
+              <li>✓ Allowed until 10:00 PM</li>
+              <li>✓ Subject to approval</li>
+              <li>✓ Based on availability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" data-aos="fade-up" class="py-32 px-6 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-serif mb-4">Farmhouse Rules</h2>
+        <p class="text-gray-600">
+          To ensure a safe and enjoyable experience for all guests.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 text-gray-700">
+        <div>
+          <h4 class="font-bold text-xl mb-4">Pool Safety</h4>
+          <ul class="space-y-2">
+            <li>• Swimming pool used at your own risk</li>
+            <li>• No lifeguard available</li>
+            <li>• Children must be supervised by adults</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-xl mb-4">Property Responsibility</h4>
+          <ul class="space-y-2">
+            <li>• Guests are responsible for any damage</li>
+            <li>• Maintain cleanliness of the property</li>
+            <li>• Follow all safety guidelines</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-xl mb-4">Guest Policy</h4>
+          <ul class="space-y-2">
+            <li>• Only registered guests allowed</li>
+            <li>• Valid ID may be requested</li>
+            <li>• Unauthorized entry prohibited</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-xl mb-4">Noise & Conduct</h4>
+          <ul class="space-y-2">
+            <li>• Maintain reasonable noise levels</li>
+            <li>• No illegal activities allowed</li>
+            <li>• Management may terminate stay if rules violated</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-[#4A6741] text-white">
+      <div
+        class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center px-6"
+      >
+        <div>
+          <h3 class="text-5xl font-bold counter" data-target="500">0</h3>
+          <p class="uppercase text-xs tracking-widest mt-2">Happy Guests</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold counter" data-target="120">0</h3>
+          <p class="uppercase text-xs tracking-widest mt-2">Events Hosted</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold counter" data-target="5">0</h3>
+          <p class="uppercase text-xs tracking-widest mt-2">Years of Service</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold counter" data-target="100">0</h3>
+          <p class="uppercase text-xs tracking-widest mt-2">Positive Reviews</p>
+        </div>
+      </div>
+    </section>
+    <!-- Location Section -->
+    <section id="location" data-aos="fade-up" class="py-32 px-6 bg-[#eee8d5]">
+      <div class="max-w-6xl mx-auto text-center mb-16">
+        <h2 class="text-5xl font-serif mb-4">Our Location</h2>
+        <p class="text-gray-600">
+          Find us easily on the map and plan your visit.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.205425226033!2d80.69728447489449!3d26.89697486076779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ea97903ff582f%3A0x3e845536f55499bb!2sNaina%20Hospital!5e0!3m2!1sen!2sin!4v1775027838324!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
     <!-- Gallery Section -->
-    <section id="gallery" class="py-24 bg-[#f4eee1] overflow-hidden">
+    <section
+      id="gallery"
+      data-aos="fade-up"
+      class="py-24 bg-[#f4eee1] overflow-hidden"
+    >
       <div class="max-w-7xl mx-auto px-6">
         <!-- Section Header -->
         <div
@@ -682,7 +1093,7 @@
           <!-- Branding & Socials -->
           <div class="lg:col-span-4">
             <div class="text-4xl font-serif italic mb-6 leading-tight">
-              Shaila Nafees Farmhouse
+              Shahla Nafees Farmhouse
             </div>
             <p class="text-gray-400 text-base leading-relaxed mb-10 max-w-sm">
               Escape the digital noise and rediscover the tactile beauty of
@@ -724,7 +1135,7 @@
               </div>
               <div class="flex items-start gap-4 text-sm text-gray-300">
                 <span class="opacity-70">✉️</span>
-                <p>stay@shailanafees.com</p>
+                <p>stay@Shahlanafees.com</p>
               </div>
             </div>
           </div>
@@ -830,7 +1241,7 @@
         <div
           class="border-t border-white/10 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.3em] text-gray-500 font-bold"
         >
-          <p>© 2026 Shaila Nafees Farmhouse. Handcrafted Hospitality.</p>
+          <p>© 2026 Shahla Nafees Farmhouse. Handcrafted Hospitality.</p>
           <div class="flex space-x-8 mt-6 md:mt-0">
             <a href="#" class="hover:text-white transition">Privacy Policy</a>
             <a href="#" class="hover:text-white transition">Terms of Service</a>
@@ -878,6 +1289,149 @@
           }
         });
       });
+    </script>
+    <script>
+      function openModal() {
+        const modal = document.getElementById("enquiryModal");
+        const container = document.getElementById("modalContainer");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        // Trigger animation
+        setTimeout(() => {
+          container.classList.remove("scale-95", "opacity-0");
+          container.classList.add("scale-100", "opacity-100");
+        }, 10);
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("enquiryModal");
+        const container = document.getElementById("modalContainer");
+
+        container.classList.remove("scale-100", "opacity-100");
+        container.classList.add("scale-95", "opacity-0");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          // Reset form/success state
+          document
+            .getElementById("popupEnquiryForm")
+            .classList.remove("hidden");
+          document.getElementById("successMessage").classList.add("hidden");
+        }, 300);
+      }
+
+      // NEW: Trigger modal automatically on page load
+      window.onload = function () {
+        // 1.5 second delay after load for better UX
+        setTimeout(openModal, 1500);
+      };
+
+      // Handle Form Submission
+      document
+        .getElementById("popupEnquiryForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const btn = e.target.querySelector("button");
+          btn.innerHTML = "Sending...";
+          btn.disabled = true;
+
+          setTimeout(() => {
+            document.getElementById("popupEnquiryForm").classList.add("hidden");
+            document
+              .getElementById("successMessage")
+              .classList.remove("hidden");
+            btn.innerHTML = "Send Message";
+            btn.disabled = false;
+          }, 1500);
+        });
+    </script>
+
+    <!-- <a href="https://wa.me/919999999999"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-2xl font-bold z-50">
+   WhatsApp Booking
+</a> -->
+
+    <div id="lightbox" onclick="this.style.display = 'none'">
+      <img id="lightbox-img" />
+    </div>
+
+    <script>
+      AOS.init({ duration: 1000, once: true });
+
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const lb = document.getElementById("lightbox");
+          const lbImg = document.getElementById("lightbox-img");
+          lb.style.display = "flex";
+          lbImg.src = img.src;
+        });
+      });
+    </script>
+
+    <a
+      href="tel:+916306160270"
+      class="fixed bottom-24 right-6 bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-full shadow-xl z-50 font-bold"
+    >
+      📞 Call
+    </a>
+
+    <a
+      href="https://wa.me/916306160270"
+      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-xl z-50 font-bold"
+    >
+      💬 WhatsApp
+    </a>
+
+    <script>
+      let slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+
+      function showSlide(i) {
+        slides.forEach((s) => s.classList.add("hidden"));
+        slides[i].classList.remove("hidden");
+      }
+
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 4000);
+    </script>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      const speed = 200;
+
+      const runCounters = () => {
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-target");
+          let count = 0;
+          const inc = target / speed;
+
+          const update = () => {
+            count += inc;
+            if (count < target) {
+              counter.innerText = Math.ceil(count);
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          update();
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runCounters();
+            observer.disconnect();
+          }
+        });
+      });
+
+      observer.observe(document.querySelector(".counter"));
     </script>
   </body>
 </html>
